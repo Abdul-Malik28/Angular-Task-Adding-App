@@ -11,7 +11,7 @@
   </header>
   <p>{{ task().description }}</p>
   <form (ngSubmit)="onChangeTaskStatus(task().id, status.value)">
-    <select #status>
+    <select title="Status" #status>
       <option value="open" [selected]="task().status === 'OPEN'">Open</option>
       <option value="in-progress" [selected]="task().status === 'IN_PROGRESS'">
         In-Progress
