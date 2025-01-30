@@ -21,13 +21,10 @@ export class TasksListComponent {
     switch (this.selectedFilter()) {
       case 'open':
         return this.tasksService.allTasks().filter(task => task.status === 'OPEN');
-        break;
       case 'in-progress':
         return this.tasksService.allTasks().filter(task => task.status === 'IN_PROGRESS');
-        break;
       case 'done':
         return this.tasksService.allTasks().filter(task => task.status === 'DONE');
-        break;
       default:
         return this.tasksService.allTasks();
     }
