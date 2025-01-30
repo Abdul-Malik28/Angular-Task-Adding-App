@@ -7,13 +7,11 @@ import { LoggingService } from "../logging.service";
 //     providedIn: 'root'
 // })
 export class TasksService {
-    // tasks = [];
     private tasks = signal<Task[]>([]);
     private loggingService = inject(LoggingService);
 
     allTasks = this.tasks.asReadonly();
 
-    // addTask(title: string, description: string) { }
     addTask(taskData: { title: string, description: string }) {
         const newTask: Task = {
             ...taskData,

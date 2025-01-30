@@ -13,21 +13,10 @@ import { TasksServiceToken } from '../../../main';
 })
 export class NewTaskComponent {
   private formEl = viewChild<ElementRef<HTMLFormElement>>('form');
-  // private tasksService: TasksService;
-
-  // constructor() {
-  // this.tasksService = new TasksService();     // !!!MAJOR PROBLEM - NEVER EVER USE THIS TO INJECT SERVICE!!!
-  // }
-
-  // constructor(tService: TasksService) {
-  //   this.tasksService = tService;
-  // }
-
-  // constructor(private tasksService: TasksService) { }
+  
   constructor(@Inject(TasksServiceToken ) private tasksService: TasksService) { }
 
   onAddTask(title: string, description: string) {
-    // this.tasksService.addTask({ title: title, description: description });
     this.tasksService.addTask({ title, description });
     this.formEl()?.nativeElement.reset();
   }
